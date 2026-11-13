@@ -1,3 +1,8 @@
 name = "tata-steel-crack-detection"
 compatibility_date = "2026-11-01"
+
+# For Cloudflare Workers Builds (npx wrangler deploy)
+assets = { directory = "./dist" }
+
+# For Cloudflare Pages
 pages_build_output_dir = "dist"
