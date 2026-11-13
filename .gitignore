@@ -1,23 +1,39 @@
-# Python cache
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 
-# Virtual env
-venv/
-.env
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Models
+# Large Deep Learning Model Files (> 100MB exceeds GitHub limits)
+*.h5
+*.keras
 models/*.h5
 models/*.keras
+**/models/*.h5
+**/models/*.keras
 
-# Output images
-outputs/
+# Virtual environments
+venv/
+.env
+.env.*
+env/
+ENV/
 
-# macOS
+# Output folders with heavy generated caches
+outputs/heatmaps/
+outputs/plots/
+outputs/reports/
+
+# Cloudflare Wrangler build files
+.wrangler/
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Operating System files
 .DS_Store
-
-# Streamlit cache
-.streamlit/
+Thumbs.db
+desktop.ini

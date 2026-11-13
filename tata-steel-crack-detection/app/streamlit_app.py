@@ -61,17 +61,26 @@ CLASS_DESC = {
 RISK_SCORE = {"HIGH": 85, "MEDIUM": 50, "LOW": 20}
 
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+_PARENT_DIR = os.path.dirname(_SCRIPT_DIR)
 MODEL_SEARCH_PATHS = [
+    os.path.join(_PARENT_DIR, "models", "best_resnet50_crack_detector.h5"),
+    os.path.join(_PARENT_DIR, "models", "resnet50_crack_detector.h5"),
+    os.path.join(_PARENT_DIR, "models", "best_model.keras"),
+    os.path.join(_PARENT_DIR, "models", "best_model.h5"),
     os.path.join(_SCRIPT_DIR, "best_model.keras"),
     os.path.join(_SCRIPT_DIR, "best_model.h5"),
     os.path.join(_SCRIPT_DIR, "models", "best_model.keras"),
     os.path.join(_SCRIPT_DIR, "models", "best_model.h5"),
+    os.path.join(_SCRIPT_DIR, "models", "best_resnet50_crack_detector.h5"),
     os.path.join(_SCRIPT_DIR, "models", "resnet50_crack_detector.h5"),
     os.path.join(_SCRIPT_DIR, "models", "resnet50_crack_detector.keras"),
+    "models/best_resnet50_crack_detector.h5",
+    "models/resnet50_crack_detector.h5",
     "models/best_model.keras",
     "models/best_model.h5",
-    "models/resnet50_crack_detector.h5",
     "models/resnet50_crack_detector.keras",
+    "tata-steel-crack-detection/models/best_resnet50_crack_detector.h5",
+    "tata-steel-crack-detection/models/resnet50_crack_detector.h5",
 ]
 
 # ══════════════════════════════════════════════
@@ -310,7 +319,7 @@ def load_model_safe():
         except ImportError:
             return None, None
     for p in MODEL_SEARCH_PATHS:
-        if os.path.exists(p):
+        if os.path.exists(p) and os.path.getsize(p) > 0:
             try:
                 return load_model(p), p
             except Exception:
