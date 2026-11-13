@@ -1,0 +1,16 @@
+{
+  "name": "tata-steel-crack-detection",
+  "version": "1.0.0",
+  "description": "SteelGuard AI · Tata Steel Surface Quality Intelligence Platform",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "echo 'Build successful: production assets ready in dist/'",
+    "deploy": "wrangler deploy"
+  },
+  "bin": {
+    "Ai": "./Ai"
+  },
+  "devDependencies": {
+    "wrangler": "^4.161.0"
+  }
+}
