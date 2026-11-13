@@ -1,3 +1,0 @@
-#!/bin/sh
-echo "SteelGuard AI project build initialized. Assets ready in dist/."
-exit 0
